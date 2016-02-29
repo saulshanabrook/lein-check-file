@@ -1,21 +1,18 @@
-# `lein-check-file`
+# `lein-check-stdin`
 
-A Leiningen plugin that prints errors encountered when loading a file.
+A Leiningen plugin that prints erros when parsing some clojure code.
 
 It's output is in the form `<line number> <error message>` if it encounters
 an error.
 
 ## Usage
 
-Put `[lein-check-file "0.1.0"]` into the `:plugins` vector of your `:user`
+Put `[lein-check-stdin "0.1.0"]` into the `:plugins` vector of your `:user`
 profile.
 
 ```bash
-$ lein check-file src/good-file.clj
+$ echo '(+ 1 1)' | lein check-stdin
 # no output on good file
-$ cat src/bad-file.clj
-(ns whafd
-  ssadf)
-$ lein check-file src/bad-file.clj
-1 Don't know how to create ISeq from: clojure.lang.Symbol
+$ echo '(+ 1 1)\n(+ true false)' | lein check-stdin
+2 java.lang.Boolean cannot be cast to java.lang.Number
 ```
