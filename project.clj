@@ -1,4 +1,4 @@
-(defproject lein-check-stdin "0.2.0"
+(defproject lein-check-stdin "0.2.0-SNAPSHOT"
   :description "Prints errors encountered when reading stdin as clojure code"
   :url "http://example.com/saulshanabrook/lein-check-stdin"
   :license {:name "Eclipse Public License"
