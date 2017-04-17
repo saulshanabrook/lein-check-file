@@ -22,3 +22,10 @@ $ echo '(+ 1 1)' | lein check-stdin
 $ echo '(+ 1 1)\n(+ true false)' | lein check-stdin
 {"file":"","line":1,"message":"java.lang.Boolean cannot be cast to java.lang.Number"}
 ```
+
+
+## Releaseing
+
+```bash
+env LEIN_USERNAME=saul LEIN_PASSWORD=<pw> lein release :minor
+```
