@@ -6,4 +6,12 @@
   :eval-in-leiningen true
   :dependencies [[org.clojure/data.json "0.2.6"]]
   :deploy-repositories [["releases" {:url "https://clojars.org/repo"
-                                     :sign-releases false}]])
+                                     :sign-releases false}]]
+  :release-tasks [["vcs" "assert-committed"]
+                  ["change" "version" "leiningen.release/bump-version" "release"]
+                  ["vcs" "commit"]
+                  ["vcs" "tag" "v" "--no-sign"] ; disable signing and add "v" prefix
+                  ["deploy"]
+                  ["change" "version" "leiningen.release/bump-version"]
+                  ["vcs" "commit"]
+                  ["vcs" "push"]])
