@@ -12,7 +12,9 @@ profile. For example, to do this for all projects, you can set  `~/.lein/profile
 
 ```clojure
 {:user {:plugins [[lein-check-stdin "0.2.0"]]}}
-```dfdf
+```
+
+Then you can use it to manually check any Clojure code, or use it to [lint Atom](https://github.com/saulshanabrook/linter-lein).
 
 ```bash
 $ echo '(+ 1 1)' | lein check-stdin
