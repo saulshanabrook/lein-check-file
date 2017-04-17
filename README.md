@@ -20,5 +20,5 @@ Then you can use it to manually check any Clojure code, or use it to [lint Atom]
 $ echo '(+ 1 1)' | lein check-stdin
 # no output on good file
 $ echo '(+ 1 1)\n(+ true false)' | lein check-stdin
-2 java.lang.Boolean cannot be cast to java.lang.Number
+{"file":"","line":1,"message":"java.lang.Boolean cannot be cast to java.lang.Number"}
 ```
