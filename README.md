@@ -7,8 +7,12 @@ an error.
 
 ## Usage
 
-Put `[lein-check-stdin "0.1.0"]` into the `:plugins` vector of your `:user`
-profile.
+Put `[lein-check-stdin "0.2.0"]` into the `:plugins` vector of your `:user`
+profile. For example, to do this for all projects, you can set  `~/.lein/profiles.clj` to:
+
+```clojure
+{:user {:plugins [[lein-check-stdin "0.2.0"]]}}
+```dfdf
 
 ```bash
 $ echo '(+ 1 1)' | lein check-stdin
